@@ -57,6 +57,33 @@
         <groupId>com.jayway.maven.plugins.android.generation2</groupId>
         <artifactId>android-maven-plugin</artifactId>
         <extensions>true</extensions>
+        <configuration>
+          <emulator>
+            <avd>15</avd>
+            <wait>120000</wait>
+          </emulator>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jruby-maven-plugin</artifactId>
+        <version>1.0-beta-4</version>
+        <executions>
+          <execution>
+            <id>android create avd -n 15</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <ruby>
+                target = `android list targets | awk '/android-15/ {print $2}'`.chomp
+                system %Q* echo | android create avd --name 15 --target #{target} * \
+                    unless `android list avd -c`.split("\n").include? '15'
+              </ruby>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
