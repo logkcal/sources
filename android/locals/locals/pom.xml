@@ -48,6 +48,7 @@
             <version>1.0</version>
             <executions>
               <execution>
+                <id>set-version-name</id>
                 <phase>generate-resources</phase>
                 <goals>
                   <goal>execute</goal>
