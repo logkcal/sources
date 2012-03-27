@@ -15,15 +15,16 @@
   <packaging>apk</packaging>
   <name>locals - Application</name>
 
-  <properties>
-    <!-- the following properties should be defined in ~/.m2/settings.xml -->
-    <sign.keystore>${user.home}/.android/henry4j.jks</sign.keystore>
-    <sign.storepass>android</sign.storepass>
-    <sign.keypass>android</sign.keypass>
-    <sign.alias>androiddebugkey</sign.alias>
-    <!-- mvn install -Prelease -Dandroid.renameManifestPackage=com.henry4j.samsung.locals -->
-    <android.renameManifestPackage>com.henry4j.android.htc.locals</android.renameManifestPackage>
-  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.android</groupId>
+      <artifactId>android</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.akquinet.android.androlog</groupId>
+      <artifactId>androlog</artifactId>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>

@@ -23,7 +23,7 @@
         <sign.alias>androiddebugkey</sign.alias>
         <!-- mvn install -Prelease -Dandroid.renameManifestPackage=com.henry4j.samsung.locals -->
         <android.renameManifestPackage>com.henry4j.android.samsung.locals</android.renameManifestPackage>
-    </properties>
+     </properties>
 
     <dependencyManagement>
         <dependencies>
