@@ -15,12 +15,9 @@
     </modules>
 
     <properties>
-        <platform.version>4.0.1.2</platform.version>
-                        <sign.keystore>/workspace/henry4j.jks</sign.keystore>
-                        <sign.storepass>android</sign.storepass>
-                        <sign.keypass>android</sign.keypass>
-                        <sign.alias>androiddebugkey</sign.alias>
-     </properties>
+        <platform.version> 4.0.1.2
+            </platform.version>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -59,7 +56,7 @@
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-                    <version>3.0.0-alpha-14</version>
+                    <version>3.1.1</version>
                     <inherited>true</inherited>
                     <configuration>
                         <androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
@@ -102,13 +99,6 @@
                         <archive>${project.build.directory}/${project.build.finalName}.${project.packaging}</archive>
                         <verbose>true</verbose>
                         <certs>true</certs>
-<!--
-                        <keystore>/workspace/henry4j.jks</keystore>
-                        <storepass>android</storepass>
-                        <keypass>android</keypass>
-                        <alias>androiddebugkey</alias>
-                        the following properties should be defined in ~/.m2/settings.xml
--->
                         <keystore>${sign.keystore}</keystore>
                         <alias>${sign.alias}</alias>
                         <storepass>${sign.storepass}</storepass>
@@ -136,15 +126,6 @@
     </build>
 
     <profiles>
-        <profile>
-            <id>android-release</id>
-            <properties>
-                <sign.keystore>/path/to/keystore</sign.keystore>
-                <sign.alias>key alias</sign.alias>
-                <sign.storepass>keystore password</sign.storepass>
-                <sign.keypass>key password</sign.keypass>
-            </properties>
-        </profile>
         <profile>
             <id>release</id>
             <activation>
