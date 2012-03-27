@@ -16,6 +16,13 @@
 
     <properties>
         <platform.version>4.0.1.2</platform.version>
+        <!-- the following properties should be defined in ~/.m2/settings.xml -->
+        <sign.keystore>${user.home}/.android/henry4j.jks</sign.keystore>
+        <sign.storepass>android</sign.storepass>
+        <sign.keypass>android</sign.keypass>
+        <sign.alias>androiddebugkey</sign.alias>
+        <!-- mvn install -Prelease -Dandroid.renameManifestPackage=com.henry4j.samsung.locals -->
+        <android.renameManifestPackage>com.henry4j.android.samsung.locals</android.renameManifestPackage>
     </properties>
 
     <dependencyManagement>
