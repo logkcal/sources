@@ -21,6 +21,8 @@
         <sign.storepass>android</sign.storepass>
         <sign.keypass>android</sign.keypass>
         <sign.alias>androiddebugkey</sign.alias>
+        <!-- mvn install -Prelease -Dandroid.renameManifestPackage=com.henry4j.samsung.locals -->
+        <android.renameManifestPackage>com.henry4j.samsung.locals</android.renameManifestPackage>
      </properties>
 
     <dependencyManagement>
