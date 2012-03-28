@@ -60,7 +60,7 @@
         <configuration>
           <emulator>
             <avd>15</avd>
-            <wait>120000</wait>
+            <wait>300000</wait>
           </emulator>
         </configuration>
       </plugin>
