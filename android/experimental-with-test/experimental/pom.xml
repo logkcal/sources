@@ -11,7 +11,7 @@
 
   <groupId>com.henry4j.android</groupId>
   <artifactId>experimental</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
   <packaging>apk</packaging>
   <name>experimental - Application</name>
 
@@ -37,7 +37,7 @@
             <phase>generate-resources</phase>
             <configuration>
             <executable>sed</executable>
-            <commandlineArgs>-e "s/android:versionName='.*'/android:versionName='${project.version}\'/" -i '' ${basedir}/AndroidManifest.xml</commandlineArgs>
+            <commandlineArgs>-e "s/android:versionName='.*'/android:versionName='${project.version}\'/" -i ' ' ${basedir}/AndroidManifest.xml</commandlineArgs>
 <!--
             sed -i '.bak' -e 's:^:# :g' /workspace/gits/oxygen-gingerbread/external/qemu/Android.mk
             <executable>ruby</executable>
