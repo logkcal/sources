@@ -37,7 +37,7 @@
             <phase>generate-resources</phase>
             <configuration>
             <executable>sed</executable>
-            <commandlineArgs>-e "s/android:versionName='.*'/android:versionName='${project.version}\'/" -i ' ' ${basedir}/AndroidManifest.xml</commandlineArgs>
+            <commandlineArgs>-e "s/android:versionName='.*'/android:versionName='${project.version}'/" -i ' ' ${basedir}/AndroidManifest.xml</commandlineArgs>
 <!--
             sed -i '.bak' -e 's:^:# :g' /workspace/gits/oxygen-gingerbread/external/qemu/Android.mk
             <executable>ruby</executable>
