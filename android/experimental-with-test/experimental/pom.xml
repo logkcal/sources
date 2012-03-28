@@ -28,39 +28,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
-        <executions>
-          <execution>
-            <id>set-pom-version-in-android-manifest</id>
-            <phase>generate-resources</phase>
-            <configuration>
-            <executable>sed</executable>
-            <commandlineArgs>-e "s/android:versionName='.*'/android:versionName='${project.version}\'/" -i ' ' ${basedir}/AndroidManifest.xml</commandlineArgs>
-<!--
-            sed -i '.bak' -e 's:^:# :g' /workspace/gits/oxygen-gingerbread/external/qemu/Android.mk
-            <executable>ruby</executable>
-            <arguments>
-              <argument>-e</argument>
-              <argument>
-                require 'rexml/document'
-                source = "${basedir}/AndroidManifest.xml"
-                manifest = open(source) { |f| f.read }
-                manifest = REXML::Document.new manifest
-                manifest.root.attributes["android:versionName"] = "${project.version}"
-                open(source, 'w') { |f| f.write(manifest) }
-              </argument>
-            </arguments>
--->
-            </configuration>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>com.jayway.maven.plugins.android.generation2</groupId>
         <artifactId>android-maven-plugin</artifactId>
         <configuration>
