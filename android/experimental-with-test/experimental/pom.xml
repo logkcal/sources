@@ -11,7 +11,7 @@
 
   <groupId>com.henry4j.android</groupId>
   <artifactId>experimental</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <packaging>apk</packaging>
   <name>experimental - Application</name>
 
@@ -39,7 +39,7 @@
             <executable>sed</executable>
             <arguments>
               <argument>-i</argument>
-              <argument>.bak</argument>
+              <argument>.</argument>
               <argument>-e</argument>
               <argument>s/android:versionName='.*'/android:versionName='${project.version}'/</argument>
               <argument>${basedir}/AndroidManifest.xml</argument>
@@ -54,7 +54,7 @@
                 source = "${basedir}/AndroidManifest.xml"
                 manifest = open(source) { |f| f.read }
                 manifest = REXML::Document.new manifest
-                manifest.root.attributes["android:versionName"] = "${version}"
+                manifest.root.attributes["android:versionName"] = "${project.version}"
                 open(source, 'w') { |f| f.write(manifest) }
               </argument>
             </arguments>
