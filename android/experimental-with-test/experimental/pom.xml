@@ -39,7 +39,7 @@
             <executable>sed</executable>
             <arguments>
               <argument>-i</argument>
-              <argument>''</argument>
+              <argument>.bak</argument>
               <argument>-e</argument>
               <argument>s/android:versionName='.*'/android:versionName='${project.version}'/</argument>
               <argument>${basedir}/AndroidManifest.xml</argument>
